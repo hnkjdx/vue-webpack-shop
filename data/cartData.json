@@ -1,0 +1,15 @@
+{
+  "status":1,
+  "result":{
+    "list":[
+      {
+        "productId": "600100002115",
+        "productName": "HAUTEVILLE CONCRETE ROCKING CHAIR",
+        "productPrice": 350,
+        "productQuantity": 1,
+        "productImage": "images/product-1.jpg"
+      }
+    ]
+  },
+  "message":""
+}
