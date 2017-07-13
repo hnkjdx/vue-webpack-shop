@@ -72,7 +72,7 @@
 						      </span>
 						    </div>
 						</li>
-						<li class="shopping-cart"><a href="cart.html" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
+						<li class="shopping-cart"><a href="cart.html" class="cart"><span><small>{{cartList.length}}</small><i class="icon-shopping-cart"></i></span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -95,7 +95,7 @@
 						<div class="product-grid" :style="{backgroundImage: 'url('+item.productImage+')'}">
 							<div class="inner">
 								<p>
-									<a href="wait-done" class="icon"><i class="icon-shopping-cart"></i></a>
+									<a href="" class="icon" @click="addToCart(item)"><i class="icon-shopping-cart"></i></a>
 								</p>
 							</div>
 						</div>
@@ -218,6 +218,6 @@
 	<script src="js/jquery.flexslider-min.js"></script>
 	<!-- Main -->
 	<script src="js/main2.js"></script>
-
+	<script src="js/main.js"></script>
 	</body>
 </html>

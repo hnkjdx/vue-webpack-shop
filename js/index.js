@@ -4,7 +4,8 @@
  new Vue  ({
     el : '#page',
     data : {
-        productList : []
+        productList : [],
+        cartList : []
     },
     computed :{
         listFilter : function () {
@@ -27,11 +28,20 @@
         })
     },
     methods :{
-        populateProduct : function (){
+        populateProduct : function () {
             var _this = this;
-            this.$http.get("data/productData.json", {"id": 123}).then(function(response) {
+            this.$http.get("data/productData.json", {"id": 123}).then(function (response) {
                 _this.productList = response.body.list;
             });
+        },
+        addToCart : function (product) {
+            var filterResult = this.cartList.filter(function(item , index, array){
+                return item.productId == product.productId;
+            })
+            if(filterResult.length < 1)
+                this.cartList.push(product)
+            else
+                filterResult[0].productQuantity ++;
         }
     }
 
