@@ -1,7 +1,6 @@
  new Vue({
     el: '#app',
     data: {
-        totalMoney: 0,
         productList: [],
         checkAllFlag: false,
         delFlag: false,
@@ -52,18 +51,19 @@
                 }
             });
         },
-        cartTotalMoney() {
-
+        delProduct: function() {
+            this.productList.splice(this.deleteIndex, 1);
+            this.delFlag = false;
+        }
+    },
+    computed : {
+        totalMoney : function() {
             return this.productList.reduce((total, item) => {
                 if (item.checked === true) {
                     total += item.productPrice * item.productQuantity;
                 }
                 return total;
             }, 0);
-        },
-        delProduct: function() {
-            this.productList.splice(this.deleteIndex, 1);
-            this.delFlag = false;
         }
     }
 });
