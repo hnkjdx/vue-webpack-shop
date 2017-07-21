@@ -1,4 +1,4 @@
- new Vue({
+ var cartVue = new Vue({
     el: '#app',
     data: {
         productList: [],
@@ -15,10 +15,8 @@
     },
     methods: {
         cartView: function() {
-            var _this = this;
-            this.$http.get("data/cartData.json", {"id": 123}).then(function(res) {
-                _this.productList = res.body.result.list;
-            });
+            this.productList = JSON.parse(window.localStorage.getItem("cartList"));
+            console.log(productList[0]);
         },
         changeMoney: function(product, way) {
             if (way > 0) {
@@ -67,7 +65,3 @@
         }
     }
 });
-// 全局过滤器
-Vue.filter('money', function(value, type) {
-    return "$" + value.toFixed(2) + type;
-})

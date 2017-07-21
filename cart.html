@@ -16,6 +16,7 @@
             text-align: center;
         }
     </style>
+  <script src="js/cart.js"></script>
 </head>
 <body>
     <div class="checkout">
@@ -84,7 +85,7 @@
                       </div>
                     </div>
                     <div class="cart-tab-2">
-                      <div class="item-price">{{ item.productPrice |  money('元')}}</div>
+                      <div class="item-price">{{ item.productPrice }}</div>
                     </div>
                     <div class="cart-tab-3">
                       <div class="item-quantity">
@@ -99,7 +100,7 @@
                       </div>
                     </div>
                     <div class="cart-tab-4">
-                      <div class="item-price-total">{{ item.productPrice * item.productQuantity | money('元')}}</div>
+                      <div class="item-price-total">{{ item.productPrice * item.productQuantity }}</div>
                     </div>
                     <div class="cart-tab-5">
                       <div class="cart-item-operation">
@@ -132,7 +133,7 @@
               </div>
               <div class="cart-foot-r">
                 <div class="item-total">
-                  Item total: <span class="total-price">{{totalMoney | money('元')}}</span>
+                  Item total: <span class="total-price">{{totalMoney }}</span>
                 </div>
                 <div class="next-btn-wrap">
                   <a href="address.html" class="btn btn--red" style="width: 200px">结账</a>
