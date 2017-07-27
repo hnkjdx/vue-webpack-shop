@@ -16,7 +16,6 @@ module.exports = {
         options: {
           loaders: {
           }
-          // other vue-loader options go here
         }
       },
       {
@@ -25,11 +24,26 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|eot|woff)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.(tpl|ejs)$/,
+          loader: 'ejs'
+      },
+      {
+        test: /\.ttf$/,
+          loader: "url-loader?limit=10000&mimetype=application/octet-stream"
+      },
+      {
+        test: /\.css$/,
+          loader: 'style-loader!css-loader'
+      },
+      { test: /\.scss$/,
+          loader: 'style!css!sass'
       }
     ]
   },
@@ -40,7 +54,8 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
+    port : 7777
   },
   performance: {
     hints: false

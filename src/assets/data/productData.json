@@ -6,63 +6,63 @@
       "productName": "HAUTEVILLE CONCRETE ROCKING CHAIR",
       "productPrice": 350,
       "productQuantity": 1,
-      "productImage": "images/product-1.jpg"
+      "productImage": "/src/assets/images/product-1.jpg"
     },
     {
       "productId": "600100002120",
       "productName": "PAVILION SPEAKER",
       "productPrice": 600,
       "productQuantity": 1,
-      "productImage": "images/product-2.jpg"
+      "productImage": "/src/assets/images/product-2.jpg"
     },
     {
       "productId": "600100002117",
       "productName": "LIGOMANCER",
       "productPrice": 780,
       "productQuantity": 1,
-      "productImage": "images/product-3.jpg"
+      "productImage": "/src/assets/images/product-3.jpg"
     },
     {
       "productId": "600100002121",
       "productName": "ALATO CABINET",
       "productPrice": 800,
       "productQuantity": 1,
-      "productImage": "images/product-4.jpg"
+      "productImage": "/src/assets/images/product-4.jpg"
     },
     {
       "productId": "600100002122",
       "productName": "EARING WIRELESS",
       "productPrice": 100,
       "productQuantity": 1,
-      "productImage": "images/product-5.jpg"
+      "productImage": "/src/assets/images/product-5.jpg"
     },
     {
       "productId": "600100002123",
       "productName": "SCULPTURAL COFFEE TABLE",
       "productPrice": 960,
       "productQuantity": 1,
-      "productImage": "images/product-6.jpg"
+      "productImage": "/src/assets/images/product-6.jpg"
     },
     {
       "productId": "600100002124",
       "productName": "THE WW CHAIR",
       "productPrice": 540,
       "productQuantity": 1,
-      "productImage": "images/product-7.jpg"
+      "productImage": "/src/assets/images/product-7.jpg"
     },
     {
       "productId": "600100002125",
       "productName": "HIMITSU MONEY BOX",
       "productPrice": 600,
       "productQuantity": 1,
-      "productImage": "images/product-8.jpg"
+      "productImage": "/src/assets/images/product-8.jpg"
     },
     {
       "productId": "600100002126",
       "productName": "ARIANE PRIN",
       "productPrice": 600,
       "productQuantity": 1,
-      "productImage": "images/product-9.jpg"
+      "productImage": "/src/assets/images/product-9.jpg"
     }
   ],
   "message": ""
