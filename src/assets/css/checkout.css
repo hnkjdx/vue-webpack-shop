@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.quantity input {
+  width: 40px;
+  padding: 5px 10px;
+  text-align: center;
+}
 .check-step {
   padding: 5px 0; }
   .check-step ul {

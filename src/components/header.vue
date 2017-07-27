@@ -51,7 +51,6 @@ export default {
   props :["cartList"],
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
   }
 }
