@@ -47,7 +47,8 @@
 
 <script>
 export default {
-  name: 'app',
+  name: 'header',
+  props :["cartList"],
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

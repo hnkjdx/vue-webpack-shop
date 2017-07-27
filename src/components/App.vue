@@ -1,6 +1,8 @@
 <template>
-  <div id="page">
-    <div id="fh5co-product">
+  <div>
+    <nav-header :cartList="cartList"></nav-header>
+    <div id="page">
+      <div id="fh5co-product">
         <div class="container">
           <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -29,7 +31,10 @@
 
         </div>
       </div>
+    </div>
+    <nav-footer></nav-footer>
   </div>
+
 </template>
 
 <script>
@@ -38,9 +43,10 @@
     import './../assets/css/bootstrap.css'
     import './../assets/css/flexslider.css'
 //    import './../assets/css/owl.carousel.min.css'
-  //  import './../assets/css/owl.theme.default.min.css'
+//  import './../assets/css/owl.theme.default.min.css'
     import './../assets/css/style.css'
-
+    import NavHeader from "./header.vue"
+    import NavFooter from "./footer.vue"
     export default {
       name: 'page',
       data () {
@@ -50,7 +56,8 @@
         }
       },
       components :{
-
+          NavHeader,
+          NavFooter
       },
         computed :{
             listFilter : function () {
@@ -83,9 +90,7 @@
         methods :{
             populateProduct() {
                 var _this = this;
-                console.log("------");
                 this.$http.get("/src/assets/data/productData.json", {"id": 123}).then(function (response) {
-                    console.log("------");
                     _this.productList = response.body.list;
                 });
             },
