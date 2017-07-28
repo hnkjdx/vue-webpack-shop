@@ -3,12 +3,12 @@
         <div class="container" >
             <div class="row">
                 <div class="col-md-3 col-xs-2">
-                    <div id="fh5co-logo"><a href="index.html">Shop.</a></div>
+                    <div id="fh5co-logo"><a href="/">Shane Shop.</a></div>
                 </div>
                 <div class="col-md-6 col-xs-6 text-center menu-1">
                     <ul>
                         <li class="has-dropdown">
-                            <a href="product.html">Shop</a>
+                            <a href="/">Shop</a>
                             <ul class="dropdown">
                                 <li><a href="single.html">Single Shop</a></li>
                             </ul>
@@ -36,7 +36,7 @@
 						      </span>
                             </div>
                         </li>
-                        <li class="shopping-cart"><a href="cart.html" class="cart"><span><small>{{cartList.length}}</small><i class="icon-shopping-cart"></i></span></a></li>
+                        <li class="shopping-cart"><a href="cart" class="cart"><span><small>{{this.$store.getters.getCartList.length}}</small><i class="icon-shopping-cart"></i></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -48,14 +48,11 @@
 <script>
 export default {
   name: 'header',
-  props :["cartList"],
-  data () {
-    return {
+
+    data () {
+        return {
+        }
     }
-  }
 }
 </script>
 
-<style>
-
-</style>

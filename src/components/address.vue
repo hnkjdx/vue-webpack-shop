@@ -156,8 +156,8 @@
     import './../assets/css/checkout.css'
     import './../assets/css/base.css'
     import './../assets/css/modal.css'
-export default {
 
+    export default {
   name: 'selectAddress',
   data () {
       return {

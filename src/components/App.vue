@@ -1,7 +1,7 @@
 <template>
   <div>
-    <nav-header :cartList="cartList"></nav-header>
-    <page @addCartAction = "getCartList"></page>
+    <nav-header></nav-header>
+    <router-view></router-view>
     <nav-footer></nav-footer>
   </div>
 
@@ -15,27 +15,28 @@
 //  import './../assets/css/owl.carousel.min.css'
 //  import './../assets/css/owl.theme.default.min.css'
     import './../assets/css/style.css'
+    import './../js/bootstrap.min.js'
+
 
     import NavHeader from "./header.vue"
     import NavFooter from "./footer.vue"
-    import Page from "./page.vue"
-
     export default {
       name: 'app',
       data () {
         return {
-          cartList : []
         }
       },
       components :{
           NavHeader,
-          Page,
           NavFooter
       },
-      methods : {
-          getCartList (cartList) {
-              this.cartList = cartList;
-          }
-      }
+        mounted () {
+            this.$nextTick(function () {
+                if(window.localStorage.getItem("cartList") == "undefined"){
+                    window.localStorage.setItem("cartList",JSON.stringify([]));
+                }
+
+        })
+        }
     }
 </script>

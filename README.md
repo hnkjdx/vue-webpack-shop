@@ -3,6 +3,21 @@
 README会记录每一次更新内容和相应知识点，有需要的话下载相应版本自行学习之后和后面的版本比对也不错。
 
 <br/><br/><br/>
+#7.28
+---
+<br>
+为了愉快的实现页面的跳转，vue-router该出场了。  
+首先还是最基础的安装   
+`npm install vue-router`  
+在src/router/index.js里new 了相应的 Router,配好了相应组件的相应path  ，main.js里配好了相应的router  
+在App.vue里配上了相应的router-view
+
+对于购物车数据处理，虽然像这种小项目使用event bus就可以了，但是因为是做练习，还是使用了vuex  
+具体可以查询相应文档https://vuex.vuejs.org/zh-cn/  
+vuex对于刷新数据丢失，可以还是使用之前就在用的localstorage
+
+还更改了其他一些小问题
+<br/><br/><br/>
 
 ## 7.27 update
 --------------------  

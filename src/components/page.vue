@@ -38,7 +38,6 @@
         data () {
             return {
                 productList : [],
-                cartList : []
             }
         },
         computed :{
@@ -61,14 +60,6 @@
                 this.populateProduct();
             })
         },
-        watch : {
-            cartList : {
-                handler(){
-                    window.localStorage.setItem("cartList",JSON.stringify(this.cartList));
-                },
-                deep:true
-            }
-        },
         methods :{
             populateProduct() {
                 var _this = this;
@@ -77,20 +68,16 @@
                 });
             },
             addToCart(product) {
-                var filterResult = this.cartList.filter(function (item, index, array) {
+                var cartList = this.$store.getters.getCartList!= undefined? this.$store.getters.getCartList : [];
+                var filterResult = cartList.filter(function (item, index, array) {
                     return item.productId == product.productId;
                 })
                 if (filterResult.length < 1)
-                    this.cartList.push(product)
+                    cartList.push(product)
                 else
                     filterResult[0].productQuantity++;
-                this.$emit("addCartAction",this.cartList);
+                this.$store.commit("saveCartList",cartList);
             }
-
         }
     }
 </script>
-
-<style>
-
-</style>

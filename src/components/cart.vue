@@ -44,7 +44,7 @@
                                 </ul>
                             </div>
                             <ul class="cart-item-list">
-                                <li v-for="(item,index) in productList">
+                                <li v-for="(item,index) in cartList">
                                     <div class="cart-tab-1">
                                         <div class="cart-item-check">
                                             <a href="javascript:void 0" class="item-check-btn" v-bind:class="{'check': item.checked}" @click="selectedProduct(item)">
@@ -57,12 +57,6 @@
                                         <div class="cart-item-title">
                                             <div class="item-name">{{ item.productName }}</div>
                                         </div>
-                                        <div class="item-include">
-                                            <dl>
-                                                <dt>赠送:</dt>
-                                                <dd v-for="part in item.parts" v-text="part.partsName"></dd>
-                                            </dl>
-                                        </div>
                                     </div>
                                     <div class="cart-tab-2">
                                         <div class="item-price">{{ item.productPrice }}</div>
@@ -72,7 +66,7 @@
                                             <div class="select-self select-self-open">
                                                 <div class="quantity">
                                                     <a href="javascript:;" @click="changeMoney(item,-1)">-</a>
-                                                    <input type="text" :value="item.productQuantity"  disabled>
+                                                    <input type="text" :value="item.productQuantity">
                                                     <a href="javascript:;" @click="changeMoney(item,1)">+</a>
                                                 </div>
                                             </div>
@@ -116,7 +110,7 @@
                                 Item total: <span class="total-price">{{totalMoney }}</span>
                             </div>
                             <div class="next-btn-wrap">
-                                <a href="address.html" class="btn btn--red" style="width: 200px">结账</a>
+                                <a href="address" class="btn btn--red" style="width: 200px">结账</a>
                             </div>
                         </div>
                     </div>
@@ -155,7 +149,7 @@ export default {
   name: 'cart',
   data () {
       return {
-          productList: [],
+          cartList: [],
           checkAllFlag: false,
           delFlag: false,
           deleteIndex: 0
@@ -168,8 +162,8 @@ export default {
     },
   methods: {
       cartView() {
-          this.productList = JSON.parse(window.localStorage.getItem("cartList"));
-          console.log(productList[0]);
+          console.log(this.$store.state.cartList)
+          this.cartList = this.$store.state.cartList;
       },
       changeMoney(product, way) {
           if (way > 0) {
@@ -193,7 +187,7 @@ export default {
       checkAll(flag) {
           this.checkAllFlag = flag;
           var _this = this;
-          this.productList.forEach(function (item, index) {
+          this.cartList.forEach(function (item, index) {
               if (typeof item.checked == 'undefined', _this.checkAllFlag) {
                   _this.$set(item, "checked", _this.checkAllFlag);
               }
@@ -203,13 +197,14 @@ export default {
           });
       },
       delProduct() {
-          this.productList.splice(this.deleteIndex, 1);
+          this.cartList.splice(this.deleteIndex, 1);
           this.delFlag = false;
+          this.$store.commit("saveCartList",this.cartList);
       }
   },
   computed : {
   totalMoney () {
-      return this.productList.reduce((total, item) => {
+      return this.cartList.reduce((total, item) => {
           if (item.checked === true) {
               total += item.productPrice * item.productQuantity;
           }
