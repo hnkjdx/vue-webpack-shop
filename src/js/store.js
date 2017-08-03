@@ -10,7 +10,8 @@ export default new Vuex.Store({
     },
     getters : {
         getCartList : state => {
-            state.cartList =JSON.parse(window.localStorage.getItem("cartList"));
+            if(JSON.parse(window.localStorage.getItem("cartList")) != null)
+                state.cartList =JSON.parse(window.localStorage.getItem("cartList"));
             return state.cartList;
         }
     },
