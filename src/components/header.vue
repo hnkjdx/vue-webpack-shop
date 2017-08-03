@@ -8,7 +8,7 @@
                 <div class="col-md-6 col-xs-6 text-center menu-1">
                     <ul>
                         <li class="has-dropdown">
-                            <a href="/">Shop</a>
+                            <a href="page">Shop</a>
                             <ul class="dropdown">
                                 <li><a href="single.html">Single Shop</a></li>
                             </ul>
