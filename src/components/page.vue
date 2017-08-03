@@ -63,7 +63,7 @@
         methods :{
             populateProduct() {
                 var _this = this;
-                this.$http.get("/src/assets/data/productData.json", {"id": 123}).then(function (response) {
+                this.$http.get("../assets/data/productData.json", {"id": 123}).then(function (response) {
                     _this.productList = response.body.list;
                 });
             },
